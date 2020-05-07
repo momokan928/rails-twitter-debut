@@ -1,0 +1,12 @@
+<h2><%= @Article.title + 'さんのツイートです。' %></h2>
+
+<h3><%= @Article.body %></p>
+
+<h4><%= @Article.created_at %></h4>
+
+
+<%= link_to '編集',edit_article_path(@Article) %>
+<%= link_to '削除',article_path(@Article),
+  method: :delete,
+  data: {confirm: '本当に削除しますか？'}
+  %>
