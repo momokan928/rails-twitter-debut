@@ -1,5 +1,5 @@
 <ul>
-<%= form_for :article, url: articles_path do |a| %>
+<%= form_for @Article, url: article_path(@Article) do |a| %>
   <li>
     <%= a.text_field :title,placeholder:'ユーザー名を入力してくだい' %>
     <% if @Article.errors.messages[:title].any? %>
