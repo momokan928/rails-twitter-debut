@@ -1,0 +1,13 @@
+<ul>
+<%= form_for :article, url: articles_path do |a| %>
+  <li>
+    <%= a.text_field :title,placeholder:'ユーザー名を入力してくだい' %>
+  </li>
+  <li>
+    <%= a.text_area :body,placeholder:'ツイートを入力してくだい' %>
+  </li>
+  <li>
+    <%= a.submit %>
+  </li>
+<% end %>
+</ul>
