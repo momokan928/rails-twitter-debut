@@ -1,13 +1,20 @@
-<h2>タイムライン</h2>
-<h3>
-<%= link_to 'ツイートをする',new_article_path %>
-</h3>
+<h2>Time line</h2>
+
+ <%= link_to new_article_path do %>
+<div class="button">
+<h3>ツイートをする</h3>
+</div>
+<% end %>
 
 <ul>
   <% @articles.each do |article|%>
-  <li>
-  <%= link_to article.title + 'さんのツイート' ,article_path(article.id) %><br>
-  <%= article.body %>
-  </li>
+
+    <%= link_to article_path(article.id) do %>
+      <li>
+      <%= article.title + 'さんのツイート' %><br>
+      <%= article.body %>
+      </li>
+    <% end %>
   <% end %>
+
 </ul>
