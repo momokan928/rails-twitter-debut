@@ -9,7 +9,19 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
+<body>
+  <div class="title-box">
+    <h1><%= link_to "Kanta's Twiter",articles_path %></h1>
+  </div>
+
+  <div class="yield">
     <%= yield %>
-  </body>
+  </div>
+
+    <!-- ここからフッターです -->
+      <footer>
+        <p>@2020 kanta's Twiter  made from rails</p>
+      </footer>
+</body>
+
 </html>
