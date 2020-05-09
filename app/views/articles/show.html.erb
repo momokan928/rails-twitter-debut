@@ -1,12 +1,35 @@
-<h2><%= @Article.title + 'さんのツイートです。' %></h2>
+<div class="tweet-show">
+  <h2><%= @Article.title + 'さんのツイート' %></h2>
 
-<h3><%= @Article.body %></p>
+  <h3><%= @Article.body %></p>
 
-<h4><%= @Article.created_at %></h4>
+  <h4><%= @Article.created_at %></h4>
 
-
-<%= link_to '編集',edit_article_path(@Article) %>
-<%= link_to '削除',article_path(@Article),
-  method: :delete,
-  data: {confirm: '本当に削除しますか？'}
+  <%= link_to '編集',edit_article_path(@Article) %>
+  <%= link_to '削除',article_path(@Article),
+    method: :delete,
+    data: {confirm: '本当に削除しますか？'}
   %>
+</div>
+
+<% if @Article.replies.any? %>
+  <div class="tweet-show">
+      <%= @Article.replies.each do |reply| %>
+        <h2><%= reply.name + 'さんのリプライ' %></h2>
+        <h3><%= reply.body %></h3>
+        <%= link_to '削除',article_reply_path(@Article,reply),
+        method: :delete,
+        data: {confirm: '本当に削除しますか？'}
+        %>
+      <% end %>
+  </div>
+ <% end %>
+
+<div class="reply-form">
+  <%= form_for ([@Article,@Article.replies.build]) do |a| %>
+    <p><%= @Article.title + 'さんへリプライする' %></p>
+    <p><%= a.text_field :name %></p>
+    <p><%= a.text_field :body %></p>
+    <p><%= a.submit %></p>
+  <% end %>
+</div>
