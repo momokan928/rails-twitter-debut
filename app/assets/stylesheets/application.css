@@ -15,6 +15,7 @@
  *= require_self
  */
 
+ /* 全体に適用されるCSSです！ */
 .vsc-initialized{
   margin: 0;
 }
@@ -25,25 +26,22 @@
   display: flex;
   justify-content: center;
   background-color: palevioletred;
-  margin: 0;
+  margin: 0 0 30px 0;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer{
-  margin-top: 100px;
   float: right;
+  margin: 200px 20px 0px 0px;
+  font-family: cursive;
 }
 
 h1{
 font-family: cursive;
 }
 
-a:visited { 
-  color: rgb(68, 65, 68); 
-  text-decoration:none;
-}
-
-a{
+a,a:visited { 
+  color: black; 
   text-decoration:none;
 }
 
@@ -51,6 +49,7 @@ ul{
   list-style: none;
 }
 
+/* yieldタグ全般のCSSです！ */
 .yield{
   width: 700px;
   margin: 0 auto;
@@ -92,4 +91,31 @@ ul{
 
 .yield li:hover{
   background-color: rgb(255, 224, 245)
+}
+
+/* showテンプレートのCSSです！ */
+.tweet-show{
+  border: outset palevioletred 2px;
+  padding : 10px 10px 15px;
+  margin-top: 0;
+  color: black;
+  font-size: 20px;
+}
+
+.tweet-show h2{
+  color: rgb(88, 87, 87);
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 0 ;
+}
+
+.tweet-show a,.tweet-show a:visited{
+  color: palevioletred;
+}
+
+.tweet-show a:hover{
+  opacity: 50%;
+}
+
+.tweet-show h4{
+  margin-bottom: 0;
 }
